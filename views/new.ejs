@@ -1,0 +1,37 @@
+<% include partials/header %>
+
+<div class = "container">
+    <header class ="jumbotron">
+        <div class="container">
+            <h1>...Is your bag complete?</h1>
+            <a class="btn btn-primary btn-lg" href="/options" role="button">Item details</a>
+        </div>
+    </header>
+</div>
+<body>
+  
+<div class = "container">
+    <header class ="jumbotron">
+        <div class="container">
+            <h1>Oh, you want a <%= bag.size %>oz. Bag?</h1>
+
+            <form action="/building/new" method="get">
+                <input type="checkbox" id="M&Ms" value=<%=bag.items[0]%> > Add M&Ms<br>
+                <input type="checkbox" id="Peanuts" value=<%=bag.items[1]%> > Add Peanuts<br>
+                <input type="checkbox" id="Raisins" value=<%=bag.items[2]%> > Add Raisins<br>
+                <input type="checkbox" id="Sunflower" value=<%=bag.items[3]%> > Add Sunflower Seeds<br>
+                <input type="checkbox" id="Walnuts" value=<%=bag.items[4]%> > Add Walnuts<br>
+                <input type="checkbox" id="Cashews" value=<%=bag.items[5]%> > Add Cashews<br>
+                <input type="checkbox" id="ChocRaisins" value=<%=bag.items[6]%> > Add Chocolate Raisins<br>
+                <input type="checkbox" id="ChocPeanuts" value=<%=bag.items[7]%> > Add Chocolate Peanuts<br>
+                <input type="submit" value="Submit">
+              </form>
+        </div>
+    </header>
+</div>
+
+    
+</body>
+<a href="/building">Let's see what's available.</a>
+
+<% include partials/footer %>

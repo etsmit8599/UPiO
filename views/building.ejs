@@ -1,0 +1,31 @@
+
+
+<% include partials/header %>
+<div class = "container">
+    <header class ="jumbotron">
+        <div class="container">
+            <h1>YOUR MIX YOUR WAY!</h1>
+            <a class="btn btn-primary btn-lg" href="/options" role="button">What can I add?!</a>
+        </div>
+    </header>
+</div>
+
+<body>
+    <div class = "row text-center" style = "display:flex; flex-wrap: wrap;">
+        <% bags.forEach(function(bags){ %>
+            <div class ="col-md-3 col-sm-6">
+                <div class = "thumbnail">
+                    
+                    <div class ="caption">     
+                        <h4><%= bags.size %> Oz.</h4>
+                    </div>
+                    <p>
+                        <a href="/building/<%=bags._id %>" class="btn btn-primary">Add Items to this bag</a>  
+                    </p>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+</body>
+
+<% include partials/footer %>

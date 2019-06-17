@@ -1,0 +1,33 @@
+
+<% include partials/header %>
+<div class = "container">
+    <header class ="jumbotron">
+        <div class="container">
+            <h1>Tempted yet...?</h1>
+            <a class="btn btn-primary btn-lg" href="/building" role="button">Choose A Bag To Begin!</a>
+        </div>
+    </header>
+</div>
+
+<body>
+    <div class = "row text-center" style = "display:flex; flex-wrap: wrap;">
+        <% items.forEach(function(items){ %>
+            <div class ="col-md-3 col-sm-6">
+                <div class = "card">
+                    <img src="<%=items.image%>" style="width:100%">
+                    <p>
+                        <%= items.name %>
+                    </p>
+                    <p class ="price">     
+                        <h4>$<%= items.price %>per Oz.</h4>
+                    </p>
+                    <p>
+                        <a href="" class="btn btn-primary">Add to Bag</a>  
+                    </p>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+</body>
+
+<% include partials/footer %>
