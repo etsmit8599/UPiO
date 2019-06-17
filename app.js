@@ -38,7 +38,13 @@ app.use(express.static('./public'));
 
 // --------DATABASE STUFF---------//
 
-mongoose.connect('mongodb://localhost:27017/upmix', { useNewUrlParser: true });;
+mongoose.connect('mongodb+srv://etsmit8599:Boostaru13524!@cluster0-a44ah.mongodb.net/test?retryWrites=true&w=majority', { 
+	useNewUrlParser: true
+ }).then(()=> {
+	 console.log("connected to db");
+ }).catch(err => {
+	 console.log("error:",err.message);
+ });
 mongoose.set('useCreateIndex', true);
 
 //-----------SERVER STUFF------------//
