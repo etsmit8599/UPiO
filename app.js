@@ -38,9 +38,8 @@ app.use(express.static('./public'));
 
 // --------DATABASE STUFF---------//
 
-mongoose.connect('mongodb+srv://etsmit8599:Boostaru13524!@cluster0-a44ah.mongodb.net/test?retryWrites=true&w=majority', { 
-	useNewUrlParser: true
- }).then(()=> {
+mongoose.connect('mongodb+srv://etsmit8599:Boostaru13524!@cluster0-a44ah.mongodb.net/test?retryWrites=true&w=majority').then(()=>
+ {
 	 console.log("connected to db");
  }).catch(err => {
 	 console.log("error:",err.message);
@@ -66,6 +65,6 @@ function isLoggedIn(req,res,next){
 app.use(authRoutes);
 app.use(buildRoutes);
 
-app.listen(3000, function(req, res){
+app.listen(process.env.PORT || 3000), function(req, res){
     console.log("The yelpCame server has started");
-});
+};
